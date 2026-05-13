@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pedidos - Gimnasio Fit</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="servicio_header">
+        <img src="../assets/img/logo.png" alt="Logo Gimnasio Fit" class="servicio_logo">
+        <h1>Gimnasio Fit</h1>
+    </header>
+
+    <nav class="servicio_nav">
+        <ul class="servicio_nav_ul">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="pedido.html">Pedido</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <main class="servicio_main">
+        <section class="servicio_section">
+
+
+            <div class="servicio_contenedor">
+                <div class="card">
+                    <h2 class="card_title">Formulario de pedido</h2>
+
+                    <form class="card_container">
+                        <div>
+                            <label for="fname">Nombre</label>
+                            <Input name="fname" type="text" placeholder="Nombre" required />
+                        </div>
+
+                        <div>
+                            <label for="lname">Apellido</label>
+                            <Input name="lname" type="text" placeholder="Apellido" required />
+                        </div>
+
+                        <div>
+                            <label for="lname">Telefono</label>
+                            <Input name="lname" type="tel" placeholder="Teléfono" required />
+                        </div>
+
+                        <div>
+                            <label for="servicio">Elige un servicio:</label>
+                            <select name="servicio" id="servicio" required>
+                                <option value="musc">Musculación</option>
+                                <option value="entrFunc">Entrenamiento Funcional</option>
+                                <option value="personalTrainer">Personal Trainer</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <p>Dias: <span style="color:red;">*</span></p>
+                            <div class="days_container">
+                                <div><input type="checkbox" id="Lunes" name="dias" value="lunes">
+                                    <label for="lunes">Lunes</label><br>
+                                    <input type="checkbox" id="martes" name="dias" value="martes">
+                                    <label for="martes"> Martes</label><br>
+                                    <input type="checkbox" id="miercoles" name="dias" value="miercoles">
+                                    <label for="miercoles"> Miercoles</label><br>
+                                </div>
+                                <div><input type="checkbox" id="jueves" name="dias" value="jueves">
+                                    <label for="jueves"> Jueves</label><br>
+                                    <input type="checkbox" id="viernes" name="dias" value="viernes">
+                                    <label for="viernes"> Viernes</label><br>
+                                </div>
+
+
+                                <span id="diasError" style="color:red; display:none; font-size:12px;">Debes seleccionar
+                                    al
+                                    menos un día</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Elegir horario:</p>
+                            <input type="radio" id="manana" name="dia" value="manana" required>
+                            <label for="manana">Mañana</label><br>
+                            <input type="radio" id="tarde" name="dia" value="tarde">
+                            <label for="tarde">Tarde</label><br>
+                            <input type="radio" id="noche" name="dia" value="noche">
+                            <label for="noche">Noche</label>
+
+                        </div>
+                        <div>
+                            <label for="fechaReserva">Fecha de reserva</label>
+                            <input id="fechaReserva" name="fechaReserva" type="date" required>
+                        </div>
+                        <div><label for="coments">Comentarios:</label>
+
+                            <textarea id="coments" name="w3review" rows="4" cols="50">Agrega tu comentario</textarea>
+                        </div>
+                        <input type="submit" class="boton-pedido-link" value="Enviar pedido">
+                        <button type="reset" class="boton-pedido-link">Limpiar formulario</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="servicio_footer">
+        <p>© 2026 Gimnasio Fit - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function (e) {
+            const diasCheckboxes = document.querySelectorAll('input[name="dias"]');
+            const algunoSeleccionado = Array.from(diasCheckboxes).some(cb => cb.checked);
+            const diasError = document.getElementById("diasError");
+
+            if (!algunoSeleccionado) {
+                e.preventDefault();
+                diasError.style.display = "inline";
+            } else {
+                diasError.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

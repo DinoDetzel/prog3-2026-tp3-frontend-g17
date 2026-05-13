@@ -1,0 +1,281 @@
+/* =========================
+    VARIABLES Y RESET
+========================= */
+:root {
+    --color-negro: #000;
+    --color-gris-oscuro: #1c1c1c;
+    --color-gris: #222;
+    --color-acento: #ff5a1f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+    BODY Y FONDO
+========================= */
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+
+    background-image: url("../assets/img/gym-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Capa oscura + blur */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* =========================
+    HEADER
+========================= */
+.servicio_header {
+    background-color: var(--color-negro);
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.servicio_logo {
+    width: 200px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.servicio_header h1 {
+    font-size: 34px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* =========================
+    NAVBAR
+========================= */
+.servicio_nav {
+    background-color: var(--color-gris);
+}
+
+.servicio_nav_ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.servicio_nav_ul li {
+    margin: 10px;
+}
+
+.servicio_nav_ul a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.servicio_nav_ul a:hover {
+    background-color: var(--color-acento);
+}
+
+/* =========================
+    MAIN Y SECCIONES
+========================= */
+.servicio_main {
+    flex: 1;
+    padding: 40px;
+}
+
+.servicio_section {
+    text-align: center;
+}
+
+.servicio_titulo {
+    margin-bottom: 30px;
+    color: var(--color-acento);
+    font-size: 32px;
+    text-align: center;
+}
+
+/* =========================
+    CONTENEDORES Y CARDS
+========================= */
+.servicio_contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.servicio_card {
+    background-color: rgba(28, 28, 28, 0.85);
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    transition: 0.3s;
+    backdrop-filter: blur(3px);
+}
+
+.servicio_card:hover {
+    transform: scale(1.05);
+    border-color: var(--color-acento);
+}
+
+.servicio_card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.servicio_card h3 {
+    margin: 15px 0 10px;
+}
+
+.servicio_card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.servicio_precio {
+    font-weight: bold;
+    color: #00ff88;
+}
+
+/* =========================
+    EQUIPO
+========================= */
+.equipo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.miembro {
+    width: 250px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.miembro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 100, 0, 0.3);
+}
+
+.miembro img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* =========================
+    FORMULARIOS / CARD GRANDE
+========================= */
+.card {
+    background-color: rgba(28, 28, 28, 0.95);
+    border: 1px solid #333;
+    border-radius: 20px;
+    max-width: 540px;
+    padding: 40px 24px;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-acento);
+}
+
+.card_title {
+    margin-bottom: 25px;
+    color: var(--color-acento);
+}
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card_container input,
+.card_container select,
+.card_container textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.days_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.days_container div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* =========================
+    BOTONES
+========================= */
+.boton-pedido-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-image: linear-gradient(90deg, #ff5a1f, #ff3e6a);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.boton-pedido-link:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+    FOOTER
+========================= */
+.servicio_footer {
+    background-color: #000;
+    text-align: center;
+    padding: 15px;
+}
+
+/* =========================
+    RESPONSIVE
+========================= */
+@media (max-width: 880px) {
+    .servicio_contenedor,
+    .card {
+        width: 100%;
+    }
+}

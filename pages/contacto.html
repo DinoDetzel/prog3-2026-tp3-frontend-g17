@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Gimnasio Fit</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="servicio_header">
+    <img src="../assets/img/logo.png" alt="Logo Gimnasio Fit" class="servicio_logo">
+    <h1>Gimnasio Fit</h1>
+</header>
+
+    <nav class="servicio_nav">
+        <ul class="servicio_nav_ul">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="pedido.html">Pedido</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+    <main class="servicio_main">
+        <section class="servicio_section">
+            <div class="servicio_contenedor">
+                <div class="card">
+                    <h2 class="servicio_titulo">Contactanos</h2>
+                    <p style="margin-bottom: 20px;"">Dejanos tu consulta y un asesor se pondrá en contacto contigo lo antes posible.</p>
+
+                    <form class="card_container">
+                        <div>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" placeholder="Nombre" name="nombre" required>
+                        </div>
+
+                        <div>
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" placeholder="Apellido" name="apellido" required>
+                        </div>
+
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="text" id="email" placeholder="Email" name="email" required>
+                        </div>
+
+                        <div>
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" placeholder="Escribe tu consulta aquí..." name="mensaje" rows="4" required></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="boton-pedido-link">Enviar consulta</button>
+                            <button type="reset" class="boton-pedido-link">Limpiar formulario</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="servicio_footer">
+        <p>© 2026 Gimnasio Fit - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
