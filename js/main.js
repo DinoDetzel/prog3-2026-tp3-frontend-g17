@@ -7,7 +7,7 @@ async function obtenerServicios() {
 
 
         contenedor.innerHTML = 'Cargando...';
-        const response = await fetch('http://localhost:3000/servicios');
+        const response = await fetch('https://prog3-2026-tp3-backend-g17.onrender.com//servicios');
         const serviciosResponse = await response.json();
         console.log('main.js: servicios cargados', serviciosResponse.data);
 
