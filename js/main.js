@@ -2,17 +2,52 @@ async function obtenerServicios() {
 
     try {
 
-        const response = await fetch(
-            'http://localhost:3000/servicios'
-        );
+        const contenedor = document.getElementById('servicioContenedor');
+        const search = document.getElementById('searchServicios');
 
-        const servicios = await response.json();
 
-        console.log(servicios);
+        contenedor.innerHTML = 'Cargando...';
+        const response = await fetch('http://localhost:3000/servicios');
+        const serviciosResponse = await response.json();
+        console.log('main.js: servicios cargados', serviciosResponse.data);
+
+        let current = serviciosResponse.data;
+
+        function render(list) {
+            if (!list || list.length === 0) {
+                contenedor.innerHTML = '<p>No hay servicios</p>';
+                return;
+            }
+            contenedor.innerHTML = '';
+            list.forEach(s => {
+                const card = document.createElement('div');
+                card.className = 'servicio_card';
+                card.innerHTML = `
+                    <img src="${s.img || '../assets/img/musculacion.png'}" alt="${s.nombre}">
+                    <h3>${s.nombre}</h3>
+                    <p>${s.descripcion || ''}</p>
+                    <span class="servicio_precio">${s.precio || ''}</span>
+                `;
+                contenedor.appendChild(card);
+            });
+        }
+
+        render(current);
+
+        search.addEventListener('input', (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            console.log('main.js: buscar', q);
+            if (!q) {
+                render(current);
+                return;
+            }
+            const filtered = current.filter(s => (s.nombre || '').toLowerCase().includes(q));
+            render(filtered);
+        });
 
     } catch (error) {
 
-        console.log('Error al obtener servicios');
+        console.error('main.js: Error al obtener servicios', error);
 
     }
 

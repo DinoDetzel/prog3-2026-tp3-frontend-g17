@@ -1,64 +1,74 @@
 <html lang="es">
- <head>
-     <meta charset="UTF-8">
-     <title>Carga de Perfil - Gimnasio Fit</title>
-     <link rel="stylesheet" href="../css/style.css">
-  </head>
- <body>
- 
- <header class="servicio_header">
-     <img src="../assets/img/logo.png" alt="Logo Gimnasio Fit" class="servicio_logo">
-     <h1>Gimnasio Fit</h1>
- </header>
- 
- <nav class="servicio_nav">
-     <ul class="servicio_nav_ul">
-         <li><a href="../index.html">Inicio</a></li>
-         <li><a href="servicios.html">Servicios</a></li>
-         <li><a href="equipo.html">Equipo</a></li>
-         <li><a href="pedido.html">Pedido</a></li>
-         <li><a href="contacto.html">Contacto</a></li>
-         <li><a href="faq.html">FAQ</a></li>
-         <li><a href="perfil.html">Perfil</a></li>
-     </ul>
- </nav>
- 
- <main class="servicio_main">
-     <section class="servicio_section">
-         <h2 class="servicio_titulo">Cargar Perfil</h2>
-         <div class="servicio_contenedor">
-             <div class="card">
-                 <form id="form-perfil" class="card_container">
-                     <div>
-                         <label for="nombre-perfil">Nombre</label>
-                         <input type="text" id="nombre-perfil" placeholder="Nombre" required>
-                     </div>
-                     <div>
-                         <label for="apellido-perfil">Apellido</label>
-                         <input type="text" id="apellido-perfil" placeholder="Apellido" required>
-                     </div>
-                     <div>
-                         <label for="mail-perfil">Email</label>
-                         <input type="email" id="mail-perfil" placeholder="Email" required>
-                     </div>
-                     <div>
-                         <label for="pass-perfil">Contraseña</label>
-                         <input type="password" id="pass-perfil" placeholder="Contraseña" required>
-                     </div>
-                     
-                     <div>
-                         <button type="submit" class="boton-pedido-link">Inscribirse</button>
-                     </div>
-                 </form>
-                 <p id="status" style="margin-top: 15px; text-align: center;"></p>
-             </div>
-         </div>
-     </section>
- </main>
 
-<footer class="servicio_footer">
-     <p>© 2026 Gimnasio Fit - Todos los derechos reservados</p>
-</footer>
+<head>
+    <meta charset="UTF-8">
+    <title>Carga de Perfil - Gimnasio Fit</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/favicon/favicon_logo.png" type="image/png">
+</head>
 
-<script src="../js/perfil.js"></script>
+<body>
+
+    <header class="servicio_header">
+        <img src="../assets/img/logo.png" alt="Logo Gimnasio Fit" class="servicio_logo">
+        <h1>Gimnasio Fit</h1>
+    </header>
+
+    <nav class="servicio_nav">
+        <ul class="servicio_nav_ul">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="pedido.html">Pedido</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+    </nav>
+
+    <main class="servicio_main">
+        <section class="servicio_section">
+            <h2 class="servicio_titulo">Perfil del Usuario</h2>
+            <div class="servicio_contenedor">
+                <div class="card">
+                    + <div style="text-align: center; margin-bottom: 20px;">
+                        + <img id="foto-perfil" src="../assets/img/logo.png" alt="Foto de perfil"
+                            style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid #ff5a1f;">
+                        + </div>
+                    + <p id="no-user" style="color:#ff5a1f; text-align:center; margin-bottom:10px;"></p>
+                    <form id="form-perfil" class="card_container">
+                        <div>
+                            <label for="nombre-perfil">Nombre</label>
+                            <input type="text" id="nombre-perfil" placeholder="Nombre" required>
+                        </div>
+                        <div>
+                            <label for="apellido-perfil">Apellido</label>
+                            <input type="text" id="apellido-perfil" placeholder="Apellido" required>
+                        </div>
+                        <div>
+                            <label for="mail-perfil">Email</label>
+                            <input type="email" id="mail-perfil" placeholder="Email" required>
+                        </div>
+                        <div>
+                            <label for="pass-perfil">Contraseña</label>
+                            <input type="password" id="pass-perfil" placeholder="Contraseña" required>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="boton-pedido-link">Actualizar perfil</button>
+                            + <button type="button" id="logoutBtn" class="boton-pedido-link"
+                                style="margin-top:10px;background:#444;">Cerrar sesión</button>
+                        </div>
+                    </form>
+                    <p id="status" style="margin-top: 15px; text-align: center;"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="servicio_footer">
+        <p>© 2026 Gimnasio Fit - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../js/perfil.js"></script>
 </body>
