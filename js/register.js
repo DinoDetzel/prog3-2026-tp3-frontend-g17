@@ -13,7 +13,7 @@ form.addEventListener('submit', async (e) => {
 
     try {
         spinner.style.display = 'block';
-        const resp = await fetch('http://localhost:3000/register', {
+        const resp = await fetch('https://prog3-2026-tp3-backend-g17.onrender.com//register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nombre, email, password })
