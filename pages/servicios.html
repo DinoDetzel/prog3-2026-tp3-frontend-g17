@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Servicios - Gimnasio Fit</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/favicon/favicon_logo.png" type="image/png">
 </head>
 <body>
 
@@ -20,6 +21,7 @@
             <li><a href="pedido.html">Pedido</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
         </ul>
     </nav>
 
@@ -27,7 +29,11 @@
         <section class="servicio_section">
             <h2 class="servicio_titulo">Nuestros Servicios</h2>
 
-            <div class="servicio_contenedor">
+            <div style="margin-bottom:12px;">
+                <input id="searchServicios" type="search" placeholder="Buscar servicio por nombre..." style="width:100%;padding:8px;">
+            </div>
+
+            <div class="servicio_contenedor" id="servicioContenedor">
 
                 <div class="servicio_card">
                     <img src="../assets/img/musculacion.png" alt="Musculación">
@@ -57,6 +63,8 @@
     <footer class="servicio_footer">
         <p>© 2026 Gimnasio Fit - Todos los derechos reservados</p>
     </footer>
+
+    <script src="../js/main.js"></script>
 
 </body>
 </html>
